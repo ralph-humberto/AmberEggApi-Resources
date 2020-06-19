@@ -19,9 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
-    scriptType: 'ps'
+    azureSubscription: 'Avaliação Gratuita(2)(18441764-decb-42f5-9121-06d30147bbbe)'
+    scriptType: 'batch'
     scriptLocation: 'inlineScript'
-    inlineScript: |
-      $tags = @{"Project"="AmberEggApi"; "Environment"="Dev"; "WorkTime"="KeepOnlineOnlyWorkTime"}
-      
+    inlineScript: | 
+      az tag add-value --name Project --value AmberEggApi
+      az tag add-value --name Environment --value Dev
+      az tag add-value --name WorkTime --value KeepOnlineOnlyWorkTime
+      echo "Done!!"
