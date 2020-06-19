@@ -26,4 +26,5 @@ steps:
     inlineScript: | 
       tags="AmberEggApi Dev KeepOnlineOnlyWorkTime" && \
       az group create --name rs-gp-dev-001 --location eastus --tags $tags && \
-      echo "Done!!"
+      az acr create --resource-group rs-gp-dev-001 --name amberEggApiRegistry --sku Basic
+  
