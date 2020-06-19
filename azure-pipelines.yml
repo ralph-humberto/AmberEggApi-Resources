@@ -21,7 +21,7 @@ steps:
   displayName: 'Creating resources'
   inputs:
     azureSubscription: 'Avaliação Gratuita(2)(18441764-decb-42f5-9121-06d30147bbbe)'
-    scriptType: 'batch'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: | 
       az tag create --name Project && \
