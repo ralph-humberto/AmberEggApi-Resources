@@ -23,6 +23,9 @@ steps:
     scriptType: 'batch'
     scriptLocation: 'inlineScript'
     inlineScript: | 
+      az tag create --name Project
+      az tag create --name Environment
+      az tag create --name WorkTime
       az tag add-value --name Project --value AmberEggApi
       az tag add-value --name Environment --value Dev
       az tag add-value --name WorkTime --value KeepOnlineOnlyWorkTime
