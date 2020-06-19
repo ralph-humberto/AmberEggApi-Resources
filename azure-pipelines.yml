@@ -18,6 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 - task: AzureCLI@2
+  displayName: 'Creating resources'
   inputs:
     azureSubscription: 'Avaliação Gratuita(2)(18441764-decb-42f5-9121-06d30147bbbe)'
     scriptType: 'batch'
