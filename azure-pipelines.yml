@@ -24,6 +24,6 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: | 
-      $tags="Project=AmberEggApi Environment=Dev WorkTime=KeepOnlineOnlyWorkTime" && \
+      tags="Project=AmberEggApi Environment=Dev WorkTime=KeepOnlineOnlyWorkTime" && \
       az group create --name rs-gp-dev-001 --location eastus --tags $tags && \
       echo "Done!!"
