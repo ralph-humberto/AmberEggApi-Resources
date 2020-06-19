@@ -29,4 +29,7 @@ steps:
       az tag add-value --name Project --value AmberEggApi
       az tag add-value --name Environment --value Dev
       az tag add-value --name WorkTime --value KeepOnlineOnlyWorkTime
+
+      az group create --name rs-gp-dev-001 --location eastus
+
       echo "Done!!"
