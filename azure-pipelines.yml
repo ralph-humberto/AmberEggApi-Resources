@@ -18,3 +18,17 @@ steps:
 - task: Bash@3
   inputs:
     filePath: './scripts/buildProject.sh'
+  displayName: 'Build and test sources'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './scripts/clearResource.sh'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './scripts/initializeResource.sh'
+  
