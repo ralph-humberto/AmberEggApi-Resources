@@ -14,17 +14,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
+    ls
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzureCLI@2
-  displayName: 'Creating resources'
-  inputs:
-    azureSubscription: 'Avaliação Gratuita(2)(18441764-decb-42f5-9121-06d30147bbbe)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: | 
-      tags="AmberEggApi Dev KeepOnlineOnlyWorkTime" && \
-      az group create --name rs-gp-dev-001 --location eastus --tags $tags && \
-      az acr create --resource-group rs-gp-dev-001 --name amberEggApiRegistry --sku Basic
-  
