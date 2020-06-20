@@ -7,8 +7,8 @@ resourceTags="AmberEggApi Dev KeepOnlineOnlyWorkTime"
 resourceGroupName=rs-gp-dev-001
 resourceGroupLocation=eastus
 resourceKubernetesName=aks-dev-001
-resourceGroupName="rs-gp-dev-001"
-kuberneteServiceName="aks-dev-001"
+appId="04a11d74-feb5-4b5e-a34a-5b30cf2c436c"
+password="zm1zBYWHSREgJwYFH80H~IPV.3CGEahSyd"
 #
 # Create 
 #
