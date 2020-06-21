@@ -4,6 +4,7 @@
 #
 echo "Initializing variables to be used on script"
 resourceTags="AmberEggApi Dev KeepOnlineOnlyWorkTime"
+resourceContainerRegistryName=acr-cr-dev-amberegg
 resourceGroupName=rs-gp-dev-001
 resourceGroupLocation=eastus
 resourceKubernetesName=aks-dev-001
@@ -22,4 +23,10 @@ az aks create --resource-group $resourceGroupName \
 	--enable-addons monitoring --generate-ssh-keys \
 	--tags $tags \
 	--service-principal $appId --client-secret $password
+echo "Resource kubernetes created successfully"
+
+echo "Creating resource-containerregistry named $resourceContainerRegistryName with tags $resourceTags"
+az acr create --resource-group $resourceGroupName \
+	--name $resourceContainerRegistryName --sku Basic \
+	--tags $tags
 echo "Resource kubernetes created successfully"
