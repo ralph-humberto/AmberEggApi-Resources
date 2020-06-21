@@ -19,5 +19,3 @@ if [ ${#resourceContainerRegistryCheck} -lt 3 ]; then
 else
     echo "$resourceContainerRegistryName: already exists"
 fi
-
-
