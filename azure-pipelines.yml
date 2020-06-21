@@ -30,4 +30,4 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './scripts/createvnet.sh'
     arguments: '$(resourceGroupName) $(resourceVnetId) $(resourceVsubnetId) ''$(tags)'''
-  displayName: 'Create the kubernetes service'
+  displayName: 'Create the vnet to kubernetes'
