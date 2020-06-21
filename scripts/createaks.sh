@@ -11,6 +11,14 @@ resourceTags=$4
 appId=$5
 password=$6
 
+echo "resourceGroupName=$resourceGroupName"
+echo "resourceKubernetesName=$resourceKubernetesName"
+echo "resourceCount=$resourceCount"
+echo "resourceTags=$resourceTags"
+echo "appId=$appId"
+echo "password=$password"
+
+
 if [ ${#kuberneteServiceCheck} -lt 3 ]; then
     echo "Creating resource-kubernetes named $resourceKubernetesName with tags $resourceTags"
     az aks create --resource-group $resourceGroupName \
