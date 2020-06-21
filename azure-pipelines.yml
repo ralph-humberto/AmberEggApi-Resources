@@ -45,5 +45,5 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: './scripts/createapim.sh'
-    arguments: '$(resourceGroupName) $(resourceGroupLocation) $(resourceApiManagementName) $(apiManagementPublisherEmail) $(apiManagementPublisherName) ''$(tags)'''
+    arguments: '$(resourceGroupName) $(resourceGroupLocation) $(resourceApiManagementName) $(apiManagementPublisherEmail) ''$(apiManagementPublisherName)'' ''$(tags)'''
   displayName: 'Create the API Management'
