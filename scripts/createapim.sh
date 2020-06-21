@@ -19,9 +19,10 @@ if [ ${#apiManagementCheck} -lt 3 ]; then
         -l $resourceGroupLocation \
         --name $apiManagementName \
         --publisher-email $apiManagementPublisherEmail \
-        --publisher-name $apiManagementPublisherName \
-		--tags $resourceTags
+        --publisher-name "$apiManagementPublisherName" \
+		--tags "$resourceTags"
     echo "API Management created successfully"
 else
 	echo "$apiManagementName: already exists"
 fi
+
