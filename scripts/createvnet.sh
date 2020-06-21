@@ -21,13 +21,11 @@ if [ ${#resourceVnetCheck} -lt 3 ]; then
         --name api-management-subnet \
         --resource-group $resourceGroupName \
         --vnet-name $resourceVnetName \
-		--tags $resourceTags
 	
 	az network vnet subnet create --address-prefixes 10.0.1.0/24 \
         --name api-ingress-subnet \
         --resource-group $resourceGroupName \
         --vnet-name $resourceVnetName \
-		--tags $resourceTags
 		
     echo "Vnet created successfully"
 else
