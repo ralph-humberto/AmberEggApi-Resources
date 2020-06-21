@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+variables:
+  resourceGroupName: '$(resourceGroupNamePreffix)-$(env)-$(count)'
+  resourceKubernetesName: '$(resourceKubernetesNamePreffix)-$(env)-$(count)'
+  resourceApiManagementName: '$(resourceApiManagementNamePreffix)-$(env)-$(count)'
+
 steps:
 - task: AzureCLI@2
   inputs:
@@ -41,3 +46,10 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './scripts/createapim.sh'
   displayName: 'Create the API Management'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './scripts/createapim.sh'
+    arguments: '$(resourceGroupName) $(resourceGroupLocation) $(resourceApiManagementName) $(apiManagementPublisherEmail) $(apiManagementPublisherName) ''$(tags)'''
