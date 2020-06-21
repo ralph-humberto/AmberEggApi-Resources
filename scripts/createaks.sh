@@ -18,6 +18,8 @@ echo "resourceTags=$resourceTags"
 echo "appId=$appId"
 echo "password=$password"
 
+echo "$kuberneteServiceName: check if exists"
+kuberneteServiceCheck=`az aks list --query "[?name=='$resourceKubernetesName']"`
 
 if [ ${#kuberneteServiceCheck} -lt 3 ]; then
     echo "Creating resource-kubernetes named $resourceKubernetesName with tags $resourceTags"
@@ -30,5 +32,3 @@ if [ ${#kuberneteServiceCheck} -lt 3 ]; then
 else
     echo "$kuberneteServiceName: already exists"
 fi
-
-
