@@ -12,7 +12,7 @@ resourceGroupCheck=`az group list --query "[?name=='$resourceGroupName']"`
 
 if [ ${#resourceGroupCheck} -lt 3 ]; then
     echo "Creating resource-group named $resourceGroupName with tags $resourceTags"
-    az group create --name $resourceGroupName --location eastus --tags $resourceTags
+    az group create --name $resourceGroupName --location $resourceGroupLocation --tags $resourceTags
     echo "Resource group created successfully"
 else
 	echo "$resourceGroupName: already exists"
