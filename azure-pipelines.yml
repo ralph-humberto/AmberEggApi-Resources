@@ -25,6 +25,7 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './scripts/createaks.sh'
     arguments: '$(resourceGroupName) $(resourceKubernetesName) $(resourceCount) ''$(tags)'' $(appId) $(password)'
+  displayName: 'Create the kubernetes service'
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
@@ -32,3 +33,4 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './scripts/createacr.sh'
     arguments: '$(resourceGroupName) $(resourceContainerRegistryName) ''$(tags)'''
+  displayName: 'Create the container registry'
