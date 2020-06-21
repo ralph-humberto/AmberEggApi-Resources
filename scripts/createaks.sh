@@ -11,13 +11,6 @@ resourceTags=$4
 appId=$5
 password=$6
 
-echo "resourceGroupName=$resourceGroupName"
-echo "resourceKubernetesName=$resourceKubernetesName"
-echo "resourceCount=$resourceCount"
-echo "resourceTags=$resourceTags"
-echo "appId=$appId"
-echo "password=$password"
-
 echo "$kuberneteServiceName: check if exists"
 kuberneteServiceCheck=`az aks list --query "[?name=='$resourceKubernetesName']"`
 
