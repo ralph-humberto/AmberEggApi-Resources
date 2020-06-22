@@ -19,9 +19,10 @@ kuberneteServiceCheck=`az aks list --query "[?name=='$resourceKubernetesName']"`
 if [ ${#kuberneteServiceCheck} -lt 3 ]; then
     echo "Creating resource-kubernetes named $resourceKubernetesName with tags $resourceTags"
     az aks create --resource-group $resourceGroupName \
+		--location eastus \
         --name $resourceKubernetesName --node-count $resourceCount \
         --enable-addons monitoring --generate-ssh-keys \
-        --tags $resourceTags --network-plugin azure --vnet-subnet-id $vnetSubnetId \
+        --tags $resourceTags --network-plugin azure \
         --service-principal $appId --client-secret $password
     echo "Resource kubernetes created successfully"
 else
