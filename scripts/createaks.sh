@@ -21,7 +21,7 @@ if [ ${#kuberneteServiceCheck} -lt 3 ]; then
     az aks create --resource-group $resourceGroupName \
         --name $resourceKubernetesName --node-count $resourceCount \
         --enable-addons monitoring --generate-ssh-keys \
-        --tags $resourceTags --vnet-subnet-id $vnetSubnetId \
+        --tags $resourceTags --network-plugin azure --vnet-subnet-id $vnetSubnetId \
         --service-principal $appId --client-secret $password
     echo "Resource kubernetes created successfully"
 else
