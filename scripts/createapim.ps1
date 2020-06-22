@@ -21,7 +21,7 @@ if($apiManagementCheck.Length -lt 1) {
     $virtualNetwork = New-AzApiManagementVirtualNetwork -SubnetResourceId "/subscriptions/$subscription/resourceGroups/$resourceGroupName/providers/Microsoft.Network/virtualNetworks/$resourceVnetName/subnets/api-management-subnet"
     New-AzApiManagement -ResourceGroupName $resourceGroupName -Location "East US" -Name $apiManagementName -Organization $apiManagementName -AdminEmail $apiManagementPublisherEmail -Sku "Developer" -VpnType "External" -VirtualNetwork $virtualNetwork
 }else {
-	write-host "$apiManagementName:already exists"
+	write-host "$apiManagementName already exists"
 }
 
 
