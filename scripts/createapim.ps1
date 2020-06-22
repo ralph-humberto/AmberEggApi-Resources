@@ -24,4 +24,4 @@ write-host "$apiManagementPublisherName"
 write-host "$resourceTags"
 
 $virtualNetwork = New-AzApiManagementVirtualNetwork -SubnetResourceId "/subscriptions/$subscription/resourceGroups/$resourceGroupName/providers/Microsoft.Network/virtualNetworks/$resourceVnetName/subnets/api-management-subnet"
-New-AzApiManagement -ResourceGroupName $resourceGroupName -Location "East US" -Name $apiManagementName -Organization $apiManagementName -AdminEmail $apiManagementPublisherEmail -Sku "Developer" -VpnType "External" -Tag $resourceTags -VirtualNetwork $virtualNetwork
+New-AzApiManagement -ResourceGroupName $resourceGroupName -Location "East US" -Name $apiManagementName -Organization $apiManagementName -AdminEmail $apiManagementPublisherEmail -Sku "Developer" -VpnType "External" -VirtualNetwork $virtualNetwork
