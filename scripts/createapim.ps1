@@ -5,7 +5,7 @@ $resourceSubnetName = $args[3]
 $apiManagementName = $args[4]
 $apiManagementPublisherEmail = $args[5]
 $apiManagementPublisherName = $args[6]
-$resourceTags = $args[7]
+$resourceTags = $args[7].Split(" ")
 
 write-host "$subscription"
 write-host "$resourceGroupName"
