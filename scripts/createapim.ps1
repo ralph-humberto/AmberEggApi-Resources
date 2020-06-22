@@ -16,7 +16,7 @@ $resourceTags = ArrayToHash($args[7].Split(" "))
 
 $apiManagementCheck = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 
-if($apiManagementCheck.Length() -lt 1) {
+if($apiManagementCheck.Length -lt 1) {
     write-host "Creating api management $apiManagementName"
     $virtualNetwork = New-AzApiManagementVirtualNetwork -SubnetResourceId "/subscriptions/$subscription/resourceGroups/$resourceGroupName/providers/Microsoft.Network/virtualNetworks/$resourceVnetName/subnets/api-management-subnet"
     New-AzApiManagement -ResourceGroupName $resourceGroupName -Location "East US" -Name $apiManagementName -Organization $apiManagementName -AdminEmail $apiManagementPublisherEmail -Sku "Developer" -VpnType "External" -VirtualNetwork $virtualNetwork
