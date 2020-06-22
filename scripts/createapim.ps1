@@ -1,5 +1,3 @@
-Install-Module -Name Az -AllowClobber -Scope AllUsers
-
 $subscription = $args[0]
 $resourceGroupName = $args[1]
 $resourceVnetName = $args[2]

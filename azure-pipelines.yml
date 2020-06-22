@@ -31,11 +31,11 @@ steps:
     scriptPath: './scripts/createvnet.sh'
     arguments: '$(resourceGroupName) $(resourceVnetId) $(resourceVsubnetId) ''$(tags)'''
   displayName: 'Create the vnet to kubernetes'
-- task: AzureCLI@2
+- task: AzurePowerShell@5
   inputs:
     azureSubscription: 'Avaliação Gratuita(18441764-decb-42f5-9121-06d30147bbbe)'
-    scriptType: 'pscore'
-    scriptLocation: 'scriptPath'
-    scriptPath: './scripts/createapim.ps1'
-    arguments: '$(subscription) $(resourceGroupName) $(resourceVnetId) $(resourceVsubnetId) $(resourceApiManagementName) $(apiManagementPublisherEmail) ''$(apiManagementPublisherName)'' ''$(tags)'''
+    ScriptType: 'FilePath'
+    ScriptPath: './scripts/createapim.ps1'
+    ScriptArguments: '$(subscription) $(resourceGroupName) $(resourceVnetId) $(resourceVsubnetId) $(resourceApiManagementName) $(apiManagementPublisherEmail) ''$(apiManagementPublisherName)'' ''$(tags)'''
+    azurePowerShellVersion: 'LatestVersion'
   displayName: 'Create the API Management'
