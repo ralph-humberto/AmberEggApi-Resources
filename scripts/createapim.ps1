@@ -1,3 +1,5 @@
+Install-Module -Name Az -AllowClobber -Scope AllUsers
+
 $subscription = $args[0]
 $resourceGroupName = $args[1]
 $resourceVnetName = $args[2]
@@ -16,5 +18,5 @@ write-host "$apiManagementPublisherEmail"
 write-host "$apiManagementPublisherName"
 write-host "$resourceTags"
 
-$virtualNetwork = New-AzApiManagementVirtualNetwork -Location "East US" -SubnetResourceId "/subscriptions/$subscription/resourceGroups/$resourceGroupName/providers/Microsoft.Network/virtualNetworks/$resourceVnetName/subnets/api-management-subnet"
+$virtualNetwork = New-AzApiManagementVirtualNetwork -SubnetResourceId "/subscriptions/$subscription/resourceGroups/$resourceGroupName/providers/Microsoft.Network/virtualNetworks/$resourceVnetName/subnets/api-management-subnet"
 New-AzApiManagement -ResourceGroupName $resourceGroupName -Location "East US" -Name "$apiManagementName" -Organization "$apiManagementName" -AdminEmail "$apiManagementPublisherEmail" -Sku "Developer" -VpnType "External" -Tags "$resourceTags" -VirtualNetwork $virtualNetwork
